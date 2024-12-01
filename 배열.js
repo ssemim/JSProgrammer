@@ -78,3 +78,24 @@ let max = Math.max(...data)
 console.log(max)
 console.log(input.indexOf(max)+1);
 
+
+// 3052번 나머지 문제
+
+let fs = require('fs');
+let input = fs.readFileSync('/dev/stdin').toString().split('\n');
+
+// 각 원소를 하나씩 확인하며 42로 나눈 나머지를 출력한다
+// 원소를 하나씩 확인한다는 점에서 시간 복잡도 O 는 N이다.
+
+let data = input.map(Number);
+let mySet = new Set(); // 집합 객체 생성
+
+for (let i = 0; i<10; i++){
+    mySet.add(data[i] % 42); // 42로 나눈 나머지를 집합의 원소로 삽입
+}
+
+// 집합에 포함된 원소의 개수 출력
+console.log(mySet.size);
+
+
+
