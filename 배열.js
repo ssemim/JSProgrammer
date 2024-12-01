@@ -42,3 +42,28 @@ let maxValue = data.reduce((a,b) => Math.max(a,b));
 console.log(minValue + " "+maxValue);
 
 
+
+// 2562번 최댓값 문제 
+
+let fs = require('fs');
+let input = fs.readFileSync('dev/stdin').toString().split('\n');
+// readline 모듈 말고 fs를 이용해 파일 전체를 읽어 들여 처리
+
+
+// 배열을 하나씩 확인하여 최댓값과 인덱스를 찾아야함
+// 계속해서 가장 큰 값을 가지는 인덱스를 업데이트
+
+let maxIndex = 0;
+let maxValue = 0;
+
+for(let i =0; i<9; i++){ // 모든 데이터를 하나씩 확인
+   let data = Number(input[i]);
+    if(maxValue < data){
+        maxValue = data;
+        maxIndex = i;       
+    }
+}
+
+console.log(maxValue);
+console.log(maxIndex +1);
+
